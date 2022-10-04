@@ -1,13 +1,17 @@
 <template>
-  <h1>{{ getUsers }}</h1>
+  <!-- <h1>{{ getUsers }}</h1> -->
   <div class="container">
-    <h1>{{ getAdmin }}</h1>
-    <h2>{{ getUser }}</h2>
+    <!-- <h1>{{ getAdmin }}</h1> -->
+    <h2>{{ getNewUser ?? "salom" }}</h2>
   </div>
 </template>
 <script>
+import store from '@/store';
 export default {
   computed: {
+   getNewUser(){
+    return this.$store.state.user
+   },
     getUsers() {
       return this.$store.state.users;
     },
